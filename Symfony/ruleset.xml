@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
-<ruleset name="Symfony">
-    <description>The Symfony coding standard.</description>
+<ruleset name="Symfony_Reservix">
+    <description>The Symfony coding standard. Adjusted for use in our projects at Reservix GmbH.</description>
 
     <!-- There should not be any code in the bundle Resources directory. -->
     <exclude-pattern>*/Resources/*</exclude-pattern>
@@ -28,7 +28,12 @@
     <rule ref="Squiz.ControlStructures.LowercaseDeclaration"/>
     <rule ref="Squiz.PHP.LowercasePHPFunctions"/>
     <rule ref="Squiz.Scope.MemberVarScope"/>
-    <rule ref="Squiz.Strings.ConcatenationSpacing"/>
+    <rule ref="Squiz.Strings.ConcatenationSpacing">
+        <properties>
+            <property name="spacing" value="1" />
+            <property name="ignoreNewLines" value="true" />
+        </properties>
+    </rule>
 
     <!-- We provide our own subclass of PEAR's ClassComment and FunctionComment sniff, but these will do: -->
     <rule ref="PEAR.Commenting.InlineComment"/>
